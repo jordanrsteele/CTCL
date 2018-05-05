@@ -25,6 +25,15 @@ class singleLinkedList:
 
         return self.tail
 
+    def get_node(self, val):
+        curr = self.head
+        while curr:
+            if curr.data == val:
+                return curr
+            curr = curr.next
+
+        return None
+
     def print_list(lst):
         curr = lst.head
         while curr:

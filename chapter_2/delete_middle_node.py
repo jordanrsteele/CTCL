@@ -15,13 +15,11 @@ def delete_middle_node(node):
 
 
 L = singleLinkedList()
-for i in range(0, 5):
+for i in range(0, 11):
     L.add(i)
 
-middleNode = L.add(5)
+middleNode = L.get_node(5)
 
-for i in range(6, 11):
-    L.add(i)
 
 L.print_list()
 
