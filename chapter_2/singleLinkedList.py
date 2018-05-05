@@ -36,6 +36,9 @@ class singleLinkedList:
 
     def print_list(lst):
         curr = lst.head
+        lst = list()
         while curr:
-            print(curr.data)
+            lst.append(curr.data)
             curr = curr.next
+
+        print(lst)
