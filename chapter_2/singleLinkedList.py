@@ -25,6 +25,17 @@ class singleLinkedList:
 
         return self.tail
 
+    def add_node(self, node):
+        # list ist empty
+        if self.head == None:
+            self.head = self.tail = node
+
+        else:
+            self.tail.next = node
+            self.tail = node
+
+        return self.tail
+
     def get_node(self, val):
         curr = self.head
         while curr:
