@@ -40,6 +40,9 @@ class MyQueue:
 
         return val
 
+    def print_stack(self):
+        print(self.stack1)
+
 """
 Q = MyQueue()
 
