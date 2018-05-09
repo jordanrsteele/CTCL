@@ -1,6 +1,28 @@
 from Graph import Graph
 from collections import deque
 
+def depth_first_search(G, vert, end, visited):
+    if not vert:
+        return None
+
+    if vert == end:
+        return True
+
+    visited.append(vert)
+    adjacent = G.return_edges(vert)
+
+    for vert in adjacent:
+        if vert not in visited:
+            return depth_first_search(G, vert, end, visited)
+
+    print(vert)
+    return False
+
+def dfs_util(G, start, end):
+    visited = []
+    return depth_first_search(G, start, end, visited)
+
+
 def breadth_first_search(G, start, end):
     queue = deque() # using append() and popleft()
     visited = [] # list of visited nodes
@@ -9,7 +31,6 @@ def breadth_first_search(G, start, end):
     visited.append(start)
     queue.append(start)
 
-    edges = G.return_edges("a")
 
     while queue:
         vert = queue.popleft()
@@ -43,5 +64,9 @@ if __name__ == "__main__":
     G = Graph(g)
 
     is_path = breadth_first_search(G, "a", "c")
-
     print(is_path)
+
+    print("*****")
+
+    bfs_is_path = dfs_util(G, "a", "c")
+    print(bfs_is_path)
